@@ -2,13 +2,20 @@
 <html>
 
 <head>
-  <title>AtBash Cipher</title>
+  <title>Atbash Cipher</title>
   <meta charset="utf-8">
   <script>
+    /**
+     * Encrypts/Decrypts the given text using the Atbash cipher.
+     * @param {int} flag - 0 for encrypt, 1 for decrypt
+    */
     function changeText(flag) {
+      // Obtain the input text
       var input;
       if (flag == 0) input = document.getElementById("input").value;
       else input = document.getElementById("output").value;
+
+      // Obtain the result text using the Atbash cipher
       var result = "";
       for (var i = 0; i < input.length; i++) {
         var char = input.charCodeAt(i);
@@ -20,6 +27,8 @@
           result += input.charAt(i);
         }
       }
+
+      // Display the result
       if (flag == 0) document.getElementById("output").value = result;
       else document.getElementById("input").value = result;
     }
