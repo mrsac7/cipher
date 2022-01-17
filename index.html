@@ -23,14 +23,8 @@
       if (flag == 0) document.getElementById("output").value = result;
       else document.getElementById("input").value = result;
     }
-    
   </script>
   <style>
-    .btn {
-      background-color: #4267B2; 
-      border: none; padding: 5px 10px; 
-      color: white;
-    }
     .text {
       background-color: #add8e6; 
       border: 2px solid #4267B2;
@@ -43,7 +37,7 @@
   </style>
 </head>
 
-<body style="font-family:Georgia, 'Times New Roman', Times, serif; background-color: lightgrey;">
+<body style="font-family:Georgia; background-color: lightgrey;">
   <div style="width:700px; margin:auto;">
     <div>
       <h1>Atbash Cipher</h1>
@@ -55,10 +49,7 @@
             <td><span><strong>PLAINTEXT</strong></span></td>
           </tr>
           <tr>
-            <td><textarea id="input"  placeholder="Enter the text to be encrypted" class="text"></textarea></td>
-          </tr>
-          <tr>
-            <td><input type="submit" value="ENCRYPT" onclick="changeText(0)" class="btn"></td>
+            <td><textarea id="input"  placeholder="Enter the text to be encrypted" class="text" onkeyup="changeText(0)"></textarea></td>
           </tr>
         </tbody>
       </table>
@@ -69,10 +60,7 @@
             <td><span><strong>CIPHERTEXT</strong></span></td>
           </tr>
           <tr>
-            <td><textarea id="output" class="text"></textarea></td>
-          </tr>
-          <tr>
-            <td><input type="submit" value="DECRYPT" onclick="changeText(1)" class="btn"></td>
+            <td><textarea id="output" placeholder="Enter the text to be decrypted" class="text" onkeyup="changeText(1)"></textarea></td>
           </tr>
         </tbody>
       </table>
