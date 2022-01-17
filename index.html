@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>AtBash Cipher</title>
+  <meta charset="utf-8">
+  <script>
+    function changeText(flag) {
+      var input;
+      if (flag == 0) input = document.getElementById("input").value;
+      else input = document.getElementById("output").value;
+      var result = "";
+      for (var i = 0; i < input.length; i++) {
+        var char = input.charCodeAt(i);
+        if (char >= 65 && char <= 90) {
+          result += String.fromCharCode(25 - (char - 65) + 65);
+        } else if (char >= 97 && char <= 122) {
+          result += String.fromCharCode(25 - (char - 97) + 97);
+        } else {
+          result += input.charAt(i);
+        }
+      }
+      if (flag == 0) document.getElementById("output").value = result;
+      else document.getElementById("input").value = result;
+    }
+    
+  </script>
+  <style>
+    .btn {
+      background-color: #4267B2; 
+      border: none; padding: 5px 10px; 
+      color: white;
+    }
+    .text {
+      background-color: #add8e6; 
+      border: 2px solid #4267B2;
+      width: 700px;
+      height: 150px;
+      color: #4267B2;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body style="font-family:Georgia, 'Times New Roman', Times, serif; background-color: lightgrey;">
+  <div style="width:700px; margin:auto;">
+    <div>
+      <h1>Atbash Cipher</h1>
+    </div>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td><span><strong>PLAINTEXT</strong></span></td>
+          </tr>
+          <tr>
+            <td><textarea id="input"  placeholder="Enter the text to be encrypted" class="text"></textarea></td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="ENCRYPT" onclick="changeText(0)" class="btn"></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <table>
+        <tbody>
+          <tr>
+            <td><span><strong>CIPHERTEXT</strong></span></td>
+          </tr>
+          <tr>
+            <td><textarea id="output" class="text"></textarea></td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="DECRYPT" onclick="changeText(1)" class="btn"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
